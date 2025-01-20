@@ -6,12 +6,20 @@ const UseStateGotcha = () => {
   //   setCount(count + 1);
   //   console.log("After setCount ", count);
   // };
+  // const handleClick = () => {
+  //   console.log("Before setCount ", count);
+  //   setCount((prevState) => {
+  //     return prevState + 1;
+  //   });
+  //   console.log("After setCount ", count);
+  // };
+
   const handleClick = () => {
-    console.log("Before setCount ", count);
-    setCount((prevState) => {
-      return prevState + 1;
-    });
-    console.log("After setCount ", count);
+    setTimeout(() => {
+      setCount((currentState) => {
+        return currentState + 1;
+      });
+    }, 1000);
   };
   return (
     <>

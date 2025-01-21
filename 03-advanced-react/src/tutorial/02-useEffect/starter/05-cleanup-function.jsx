@@ -5,7 +5,12 @@ const CleanupFunction = () => {
 
   const Example = () => {
     useEffect(() => {
-      console.log("Within UseEffect");
+      const intID = setInterval(() => {
+        console.log("Within UseEffect");
+      }, 1000);
+      return () => {
+        clearInterval(intID);
+      };
     }, []);
     return <h1>Truthy</h1>;
   };

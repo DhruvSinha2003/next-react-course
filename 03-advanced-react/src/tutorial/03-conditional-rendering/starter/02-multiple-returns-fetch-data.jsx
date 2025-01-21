@@ -30,25 +30,32 @@ const MultipleReturnsFetchData = () => {
     );
   }
 
-  if (user && !error) {
-    return (
-      <div>
-        <h1>User Data</h1>
-        <img
-          src={user.avatar_url}
-          alt={user.name}
-          style={{
-            maxWidth: "200px",
-            maxHeight: "200px",
-            borderRadius: "40px",
-          }}
-        />
-        <h2>{user.name}</h2>
-        <h4>Works at {user.company}</h4>
-        <span>{user.bio}</span>
-      </div>
-    );
-  }
+  const { avatar_url, name, company, bio } = user;
+
+  return (
+    <div
+      style={{
+        backgroundColor: "#085",
+        padding: "50px",
+        maxWidth: "50%",
+        borderBottomRightRadius: "40px",
+      }}
+    >
+      <h1>In memoriam</h1>
+      <img
+        src={avatar_url}
+        alt={name}
+        style={{
+          maxWidth: "200px",
+          maxHeight: "200px",
+          borderTopLeftRadius: "40px",
+        }}
+      />
+      <h2>{name}</h2>
+      <h4>Works at {company}</h4>
+      <span>{bio}</span>
+    </div>
+  );
 
   return <h2>No user data available</h2>;
 };

@@ -5,11 +5,18 @@ const CleanupFunction = () => {
 
   const Example = () => {
     useEffect(() => {
-      const intID = setInterval(() => {
-        console.log("Within UseEffect");
-      }, 1000);
+      // const intID = setInterval(() => {
+      //   console.log("Within UseEffect");
+      // }, 1000);
+      // return () => {
+      //   clearInterval(intID);
+      // };
+      const handleEvent = () => {
+        console.log("Clicked!");
+      };
+      window.addEventListener("click", handleEvent);
       return () => {
-        clearInterval(intID);
+        window.removeEventListener("click", handleEvent);
       };
     }, []);
     return <h1>Truthy</h1>;

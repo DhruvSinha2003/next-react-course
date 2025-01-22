@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import Tours from "./components/Tours";
 const url = "https://www.course-api.com/react-tours-project";
-
 const App = () => {
   const [tours, setTours] = useState(null);
 
@@ -21,6 +21,6 @@ const App = () => {
     fetchData();
   }, []);
 
-  return <div>Tours Starter</div>;
+  return <div>{tours && <Tours tours={tours} />}</div>;
 };
 export default App;

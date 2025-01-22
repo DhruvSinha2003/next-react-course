@@ -8,7 +8,9 @@ const App = () => {
   return (
     <div>
       <h1 className="title">Questions</h1>
-      <SingleQuestion question={queArray[0]} />
+      {queArray.map((question) => {
+        return <SingleQuestion key={question.id} question={question} />;
+      })}
     </div>
   );
 };

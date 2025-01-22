@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Tour = ({ id, image, info, name, price }) => {
+const Tour = ({ id, image, info, name, price, removeTour }) => {
+  const [readMore, setReadMore] = useState(false);
   return (
     <div
       className="card"
@@ -26,9 +27,17 @@ const Tour = ({ id, image, info, name, price }) => {
       />
       <div style={{ padding: "10px" }}>
         <h3 style={{ margin: "10px 0" }}>{name}</h3>
-        <p style={{ color: "#555" }}>{info}</p>
+        <p>
+          {readMore ? info : `${info.substring(0, 200)}...`}
+          <button className="info-btn" onClick={() => setReadMore(!readMore)}>
+            {readMore ? "show less" : "  read more"}
+          </button>
+        </p>
         <h4 style={{ color: "#e91e63" }}>${price}</h4>
       </div>
+      <button className="btn" onClick={() => removeTour(id)}>
+        Remove tour
+      </button>
     </div>
   );
 };

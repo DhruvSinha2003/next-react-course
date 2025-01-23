@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import JobInfo from "../JobInfo";
 const url = "https://www.course-api.com/react-tabs-project";
 
 const App = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const fetchData = async () => {
     setLoading(true);
@@ -12,6 +13,7 @@ const App = () => {
         throw new Error("Error while fetching the data");
       }
       const res = await response.json();
+      setData(res);
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -31,6 +33,18 @@ const App = () => {
     );
   }
 
-  return <h2>Tabs Starter</h2>;
+  return (
+    <div>
+      <h1>Jobs portal</h1>
+
+      {data.length > 0 ? (
+        data.map((job) => {
+          return <JobInfo job={job} />;
+        })
+      ) : (
+        <p>No jobs available</p>
+      )}
+    </div>
+  );
 };
 export default App;

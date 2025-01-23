@@ -5,6 +5,7 @@ const url = "https://www.course-api.com/react-tabs-project";
 const App = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currentItem, setCurrentItem] = useState(0);
 
   const fetchData = async () => {
     setLoading(true);
@@ -36,8 +37,24 @@ const App = () => {
 
   return (
     <div>
+      <h1>Jobs portal</h1>
+      <div>
+        {data.map((job) => {
+          return (
+            <button
+              className="btn"
+              style={{ margin: "10px" }}
+              onClick={() => {
+                setCurrentItem(data.indexOf(job));
+              }}
+            >
+              {job.company}
+            </button>
+          );
+        })}
+      </div>
       {data.length > 0 ? (
-        data.map((job) => <JobInfo key={job.id} job={job} />)
+        <JobInfo job={data[currentItem]} />
       ) : (
         <p>No jobs available</p>
       )}

@@ -7,9 +7,18 @@ const JobDuties = ({ duties }) => {
 
   return (
     <div>
-      <ul>
+      <ul style={{ paddingLeft: "20px" }}>
         {duties.map((duty, index) => (
-          <li key={index}>{duty}</li>
+          <li
+            key={index}
+            style={{
+              marginBottom: "10px",
+              color: "#555",
+              listStyleType: "disc",
+            }}
+          >
+            {duty}
+          </li>
         ))}
       </ul>
     </div>

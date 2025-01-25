@@ -1,6 +1,6 @@
 import React from "react";
 
-const ColorList = () => {
+const ColorList = ({ colors }) => {
   return <div></div>;
 };
 

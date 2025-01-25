@@ -1,4 +1,9 @@
+import Form from "./Form";
 const App = () => {
-  return <h2>Color Generator Starter</h2>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 };
 export default App;

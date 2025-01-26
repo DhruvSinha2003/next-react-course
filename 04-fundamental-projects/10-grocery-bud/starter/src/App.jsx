@@ -1,13 +1,12 @@
 import { useState } from "react";
-import Form from "./Form";
 const App = () => {
   const [item, setItem] = useState("");
 
-  const Form = () => {
-    const handleSubmit = (e) => {
-      e.preventDefault();
-    };
-    return (
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  return (
+    <div>
       <form type="submit">
         <label htmlFor="item">Item</label>
         <input type="text" />
@@ -15,8 +14,8 @@ const App = () => {
           Submit
         </button>
       </form>
-    );
-  };
+    </div>
+  );
 };
 
 export default App;

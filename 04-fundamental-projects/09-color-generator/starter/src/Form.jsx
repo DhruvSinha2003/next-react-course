@@ -35,7 +35,7 @@ const Form = () => {
           Submit
         </button>
       </form>
-      <h3>{color.toString()}</h3>
+      ={" "}
     </div>
   );
 };

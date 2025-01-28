@@ -4,15 +4,27 @@ const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   return (
     <div>
-      {showLinks &&
-        links.map((link) => {
-          return (
-            <div id={link.id}>
-              <h1>{link.text}</h1>
-              <h1>{link.url}</h1>
-            </div>
-          );
-        })}
+      <button
+        className="btn"
+        onClick={() => {
+          setShowLinks(!showLinks);
+        }}
+      >
+        ShowLink
+      </button>
+      {showLinks && (
+        <div>
+          <ul>
+            {links.map((link) => {
+              return (
+                <li key={link.id}>
+                  <a href="link.url">{link.text}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

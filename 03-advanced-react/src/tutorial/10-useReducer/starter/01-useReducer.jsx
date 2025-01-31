@@ -10,8 +10,10 @@ const reducer = (state, action) => {
     return { ...state, people: [] };
   } else if (action.type === "RESET_LIST") {
     return { ...state, people: data };
+  } else if (action.type === "REMOVE_ITEM") {
+    let newPeople = state.people.filter((person) => person.id !== action.id);
+    return { ...state, people: newPeople };
   }
-
   return state;
 };
 
@@ -21,7 +23,7 @@ const ReducerBasics = () => {
   const removeItem = (id) => {
     // let newPeople = people.filter((person) => person.id !== id);
     // setPeople(newPeople);
-    dispatch({});
+    dispatch({ type: "REMOVE_ITEM", id: id });
   };
 
   const handleReset = () => {

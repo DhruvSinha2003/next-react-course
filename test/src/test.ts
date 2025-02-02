@@ -26,3 +26,4 @@ let prices: number[] = [1,2,3]
 let emptyArray:[] = []
 let anyArray = [1,'asd',false]
 
+let car : {brand:string; year: number} = { brand: 'honda', year:2024}

@@ -10,3 +10,19 @@ total = 30;
 let notSure : any = false;
 notSure = 'hmm';
 
+const books = ['atomic habits', 'ikigai', 'deep work'];
+let foundBook : string|undefined;
+
+for (let book of books){
+    if(book === 'ikigai'){
+        foundBook = book;
+        break;
+    }
+}
+
+console.log(foundBook);
+
+let prices: number[] = [1,2,3]
+let emptyArray:[] = []
+let anyArray = [1,'asd',false]
+

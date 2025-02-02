@@ -19,11 +19,21 @@ for (let book of books){
         break;
     }
 }
-
 console.log(foundBook);
 
-let prices: number[] = [1,2,3]
-let emptyArray:[] = []
-let anyArray = [1,'asd',false]
+// let prices: number[] = [1,2,3]
+// let emptyArray:[] = []
+// let anyArray = [1,'asd',false]
+// let car : {brand:string; year: number} = { brand: 'honda', year:2024}
 
-let car : {brand:string; year: number} = { brand: 'honda', year:2024}
+
+let book = {title:'book', price:20}
+let pen = {title:'pen', price:10}
+let notebook = {title:'notebook'} 
+
+let items: {readonly title:string, price:number}[] = [book,pen] //cant add notebook
+let itemss: {title:string, price?:number}[] = [book,pen,notebook] 
+
+// items[0].title = 'new'
+
+

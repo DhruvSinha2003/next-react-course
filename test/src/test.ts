@@ -46,3 +46,8 @@ let products : {brand:string, year?:number}[]= [bike,laptop,headphone]
 
 products.push({brand:"nike"})
 
+function sayHello(name: string) {
+    console.log(`Hello, ${name}`)
+}
+
+sayHello("Dhruv")

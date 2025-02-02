@@ -37,3 +37,12 @@ let itemss: {title:string, price?:number}[] = [book,pen,notebook]
 // items[0].title = 'new'
 
 
+let bike : {brand: string, year: number} = {brand: "honda", year: 2025}
+let laptop : {brand: string, year: number} = {brand: "acer", year: 2024}
+
+let headphone: {brand:string} = {brand:"sony"}
+
+let products : {brand:string, year?:number}[]= [bike,laptop,headphone]
+
+products.push({brand:"nike"})
+

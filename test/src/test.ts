@@ -61,3 +61,32 @@ function checkName (name : string) : boolean {
 }
 
 console.log("Check Name: "+ checkName("XYZ"))
+
+function processInput(input: string|number): void {
+     
+    if (typeof input === 'string'){
+        console.log(input.toUpperCase());
+    }else if(typeof input === 'number'){
+        console.log(2*input);
+    }
+}
+
+processInput("Dhruv");
+processInput(10);
+
+function processData(input:string|number, config: {reverse:boolean } = {reverse:false}){
+    if(typeof input === "number"){
+        return input*input
+    }else if(typeof input === "string" && config.reverse === true){
+        return input.toUpperCase().split('').reverse().join('')
+    }else {
+        return input.toUpperCase()
+    }
+}
+
+
+console.log(processData(16));
+console.log(processData("Dhruv", {reverse:true}));
+console.log(processData("Dhruv"));
+
+

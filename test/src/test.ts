@@ -90,3 +90,64 @@ console.log(processData("Dhruv", {reverse:true}));
 console.log(processData("Dhruv"));
 
 
+type User = { id: number; name: string; isActive: boolean }
+
+const john: User = {
+    id: 1,
+    name: "john",
+    isActive: true,
+  };
+  const susan: User = {
+    id: 1,
+    name: "susan",
+    isActive: false,
+  };
+  
+  function createUser(user: User): User {
+    console.log(`Hello there ${user.name.toUpperCase()} !!!`);
+  
+    return user;
+  }
+
+  type StringorNumber = string | number
+
+  let value: StringorNumber
+  value = 15
+  value = "hello"
+
+
+type Employee = { id: number; name: string; dept: string };
+type Manager = { id: number; name: string; employees: Employee[] };
+
+const employee1: Employee = {
+  id: 1,
+  name: "Alice",
+  dept: "Engineering",
+};
+
+const employee2: Employee = {
+  id: 2,
+  name: "Bob",
+  dept: "Marketing",
+};
+
+const manager: Manager = {
+  id: 1,
+  name: "Charlie",
+  employees: [employee1, employee2],
+};
+
+console.log(employee1);
+console.log(employee2);
+console.log(manager);
+
+  type Staff = Employee | Manager;
+
+  function printStaffDetails(input:Staff):void{
+    if('employees' in input){
+        console.log(`${input.name} is a manager of ${input.employees.length} employees`);
+    }else{
+        console.log(`${input.name} is an employee of ${input.dept} department`);
+        
+    }
+  }

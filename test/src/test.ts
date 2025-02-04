@@ -157,3 +157,12 @@ printStaffDetails(employee2)
 printStaffDetails(manager)
 
 
+interface Computer {readonly id:number; brand:string; ram: number; storage?: string; upgradeRam:(amount: number)=>number}
+
+
+const pc : Computer = {
+    id: 1, brand: "acer", ram:4, upgradeRam(amount){this.ram += amount ;return this.ram}
+
+}
+
+console.log(pc,pc.upgradeRam(4)); 

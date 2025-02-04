@@ -116,8 +116,8 @@ const john: User = {
   value = "hello"
 
 
-type Employee = { id: number; name: string; dept: string };
-type Manager = { id: number; name: string; employees: Employee[] };
+interface Employee  { id: number; name: string; dept: string };
+interface Manager  { id: number; name: string; employees: Employee[] };
 
 const employee1: Employee = {
   id: 1,

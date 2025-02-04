@@ -141,13 +141,19 @@ console.log(employee1);
 console.log(employee2);
 console.log(manager);
 
-  type Staff = Employee | Manager;
+type Staff = Employee | Manager;
 
-  function printStaffDetails(input:Staff):void{
+function printStaffDetails(input:Staff):void{
     if('employees' in input){
         console.log(`${input.name} is a manager of ${input.employees.length} employees`);
     }else{
         console.log(`${input.name} is an employee of ${input.dept} department`);
         
     }
-  }
+}
+
+printStaffDetails(employee1)
+printStaffDetails(employee2)
+printStaffDetails(manager)
+
+

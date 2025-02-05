@@ -31,7 +31,7 @@
 // let notebook = {title:'notebook'} 
 
 // let items: {readonly title:string, price:number}[] = [book,pen] //cant add notebook
-// let itemss: {title:string, price?:number}[] = [book,pen,notebook] 
+// let items2: {title:string, price?:number}[] = [book,pen,notebook] 
 // // items[0].title = 'new'
 
 // let bike : {brand: string, year: number} = {brand: "honda", year: 2025}
@@ -109,9 +109,9 @@
 //     return user;
 //   }
 
-//   type StringorNumber = string | number
+//   type StringOrNumber = string | number
 
-//   let value: StringorNumber
+//   let value: StringOrNumber
 //   value = 15
 //   value = "hello"
 
@@ -213,20 +213,21 @@
 // const employee = getEmployee()
 // console.log(employee);
 
-enum UserRole {
-    Admin, Manager, Employee
-}
+// enum UserRole {
+//     Admin, Manager, Employee
+// }
 
-type User = {
-    id: number;
-    name: string;
-    role: UserRole
-    contact : [email: string, phone: string]
-}
+// type User = {
+//     id: number;
+//     name: string;
+//     role: UserRole
+//     contact : [email: string, phone: string]
+// }
 
-function createUser (user: User) : User  {
-    const result : User = user;
-    return result;
-}
+// function createUser (user: User) : User  {
+//     const result : User = user;
+//     return result;
+// }
 
-console.log(createUser({id:1,name:"Dhruv",role:UserRole.Admin,contact:[ "dhruv.sinha", "2345"]}))
+// console.log(createUser({id:1,name:"Dhruv",role:UserRole.Admin,contact:[ "dhruv.sinha", "2345"]}))
+

@@ -116,45 +116,45 @@ const john: User = {
   value = "hello"
 
 
-interface Employee  { id: number; name: string; dept: string };
-interface Manager  { id: number; name: string; employees: Employee[] };
+// interface Employee  { id: number; name: string; dept: string };
+// interface Manager  { id: number; name: string; employees: Employee[] };
 
-const employee1: Employee = {
-  id: 1,
-  name: "Alice",
-  dept: "Engineering",
-};
+// const employee1: Employee = {
+//   id: 1,
+//   name: "Alice",
+//   dept: "Engineering",
+// };
 
-const employee2: Employee = {
-  id: 2,
-  name: "Bob",
-  dept: "Marketing",
-};
+// const employee2: Employee = {
+//   id: 2,
+//   name: "Bob",
+//   dept: "Marketing",
+// };
 
-const manager: Manager = {
-  id: 1,
-  name: "Charlie",
-  employees: [employee1, employee2],
-};
+// const manager: Manager = {
+//   id: 1,
+//   name: "Charlie",
+//   employees: [employee1, employee2],
+// };
 
-console.log(employee1);
-console.log(employee2);
-console.log(manager);
+// console.log(employee1);
+// console.log(employee2);
+// console.log(manager);
 
-type Staff = Employee | Manager;
+// type Staff = Employee | Manager;
 
-function printStaffDetails(input:Staff):void{
-    if('employees' in input){
-        console.log(`${input.name} is a manager of ${input.employees.length} employees`);
-    }else{
-        console.log(`${input.name} is an employee of ${input.dept} department`);
+// function printStaffDetails(input:Staff):void{
+//     if('employees' in input){
+//         console.log(`${input.name} is a manager of ${input.employees.length} employees`);
+//     }else{
+//         console.log(`${input.name} is an employee of ${input.dept} department`);
         
-    }
-}
+//     }
+// }
 
-printStaffDetails(employee1)
-printStaffDetails(employee2)
-printStaffDetails(manager)
+// printStaffDetails(employee1)
+// printStaffDetails(employee2)
+// printStaffDetails(manager)
 
 
 interface Computer {readonly id:number; brand:string; ram: number; storage?: string; upgradeRam:(amount: number)=>number}
@@ -166,3 +166,49 @@ const pc : Computer = {
 }
 
 console.log(pc,pc.upgradeRam(4)); 
+
+interface Person {
+    name:string
+}
+
+interface DogOwner extends Person {
+    dogName:string
+}
+
+interface Manager extends Person {
+    managePeople():void,
+    delegateTasks():void
+}
+
+function getEmployee(): Person|DogOwner|Manager{
+    const randomNum = Math.random()
+
+    if (randomNum < 0.33){
+        const obj : Person = {
+            name:"Dhruv",
+        }
+        return obj
+    } 
+    if (randomNum < 0.66){
+        const obj : DogOwner = {
+            name:"Dhruv",
+            dogName:"Rex",
+        }
+        return obj
+    } 
+   else{
+        const obj : Manager = {
+            name:"Dhruv",
+            managePeople() {
+                console.log('Managing People...');    
+            },
+            delegateTasks() {
+                console.log('Delegating tasks..');       
+            },
+        }
+        return obj
+    } 
+}
+
+const employee = getEmployee()
+console.log(employee);

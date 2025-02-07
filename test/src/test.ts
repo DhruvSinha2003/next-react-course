@@ -232,42 +232,43 @@
 // console.log(createUser({id:1,name:"Dhruv",role:UserRole.Admin,contact:[ "dhruv.sinha", "2345"]}))
 
 
-import { z } from "zod";
+// import { z } from "zod";
 
-const url = 'https://www.scourse-api.com/react-tours-project';
+// const url = 'https://www.scourse-api.com/react-tours-project';
 
-const tourSchema = z.object({
-    id : z.string(),
-    name : z.string(),
-    info : z.string(),
-    image : z.string(),
-    price : z.string(),
+// const tourSchema = z.object({
+//     id : z.string(),
+//     name : z.string(),
+//     info : z.string(),
+//     image : z.string(),
+//     price : z.string(),
 
-})
+// })
 
-type Tour = z.infer<typeof tourSchema>;
+// type Tour = z.infer<typeof tourSchema>;
 
-async function fetchData(url: string): Promise<Tour[]> {
-  try {
-    const response = await fetch(url);
+// async function fetchData(url: string): Promise<Tour[]> {
+//   try {
+//     const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
 
-    const data: Tour[] = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    const errMsg =
-      error instanceof Error ? error.message : 'there was an error...';
-    console.error(errMsg);
+//     const data: Tour[] = await response.json();
+//     console.log(data);
+//     return data;
+//   } catch (error) {
+//     const errMsg =
+//       error instanceof Error ? error.message : 'there was an error...';
+//     console.error(errMsg);
 
-    return [];
-  }
-}
+//     return [];
+//   }
+// }
 
-const tours = await fetchData(url);
-tours.map((tour) => {
-  console.log(tour.name);
-});
+// const tours = await fetchData(url);
+// tours.map((tour) => {
+//   console.log(tour.name);
+// });
+

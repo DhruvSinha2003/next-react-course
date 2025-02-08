@@ -7,7 +7,9 @@ type Task = {
     isCompleted: boolean;
 }
 
-const tasks: Task[] = []
+const tasks: Task[] = loadTasks();
+
+tasks.forEach(renderTask)
 
 taskForm?.addEventListener('submit',(event)=>{
     event.preventDefault()
@@ -19,6 +21,7 @@ taskForm?.addEventListener('submit',(event)=>{
         }
         addTask(task)
         renderTask(task)
+        updateStorage()
         formInput.value="";
         return;
     }else{
@@ -33,5 +36,25 @@ function addTask(task:Task): void {
 function renderTask(task:Task): void {
     const taskElement = document.createElement('li')
     taskElement.textContent = task.description;
+    const taskCheckbox = document.createElement('input')
+    taskCheckbox.type = 'checkbox'
+    taskCheckbox.checked = task.isCompleted;
+
+    taskCheckbox.addEventListener('change', () => {
+        task.isCompleted = !task.isCompleted;
+        updateStorage();
+    })
+
+    taskElement.appendChild(taskCheckbox)
     taskListElement?.appendChild(taskElement);
 }
+
+function updateStorage() : void {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks():Task[]{
+    const storedTasks = localStorage.getItem('tasks')
+    return storedTasks? JSON.parse(storedTasks):[];
+}
+

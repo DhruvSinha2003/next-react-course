@@ -1,4 +1,4 @@
-import Component from "./final/05-challenge";
+import Component from "./starter/05-challenge";
 
 function App() {
   return (

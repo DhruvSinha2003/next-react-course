@@ -1,5 +1,5 @@
-type BasicUser = { type: "basic"; name: "string" };
-type AdvancedUser = { type: "advanced"; name: "string"; email: "string" };
+type BasicUser = { type: "basic"; name: string };
+type AdvancedUser = { type: "advanced"; name: string; email: string };
 type User = BasicUser | AdvancedUser;
 function Component(props: User) {
   const { type, name } = props;
